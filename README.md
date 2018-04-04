@@ -43,7 +43,7 @@ That's it. I called it ABBA as A,B -> B,A. I haven't searched on the web yet - I
 
 Filip, you have asked that further one could ask what would happen if we reach MAX of int (as in this example).
 To answare it, it is worth to know, how integers are coded, kept in Java. In binary representation their are cyclic.
-This means `MAX + 1 = MIN`. Thank to that it is cyclic, it **do not metter** where we start, so described algorith will work fine also when numerical limits are reached.
+This means `MAX + 1 = MIN`. **Thank to** that it is **cyclic**, it **do not metter** where we start, so described algorith will **work fine** also when numerical **limits are reached**.
 
 I wrote a small code in Java to check it:
 ```java
