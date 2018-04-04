@@ -27,7 +27,7 @@ In next step at first position I write sum of two variables, keeping B unchanged
 
 This is one step operation, and no information is lost. Moreover, I have choosen sum, as it is symetrical : A+B = B+A.
 
-In a second step I will keep 1<sup>st</sup> variable unchanged while as a second one I put var<sub>1</sub> -2 var<sub>2</sub>.
+In a second step I will keep 1<sup>st</sup> variable unchanged while as a second one I put `var_1 - var_2`.
 
 ```A+B, A```
 
