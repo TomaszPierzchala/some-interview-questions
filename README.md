@@ -31,7 +31,7 @@ In a second step I will keep 1<sup>st</sup> variable unchanged while as a second
 
 ```A+B, A```
 
-Finally, I substract scond variable from a first one :
+Finally, I do the same with a first variable (`var_1 - var_2`) leaving 2<sup>nd</sup> unchanged :
 
 ```B, A```
 
@@ -42,4 +42,35 @@ In summary:
 That's it. I called it ABBA as A,B -> B,A. I haven't searched on the web yet - I swear.
 
 Filip, you have asked that further one could ask what would happen if we reach MAX of int (as in this example).
-To unsware it, it is worth to know, how integers are coded, kept in Java.
+To answare it, it is worth to know, how integers are coded, kept in Java. In binary representation their are cyclic.
+This means `MAX + 1 = MIN`. Thank to that it is cyclic, it **do not metter** where we start, so described algorith will work fine also when numerical limits are reached.
+
+I wrote a small code in Java to check it:
+```java
+	public static void main(String[] args) {
+		// auxiliary to check binary cyclicism
+		final String FORMAT = "%11d      %32s%n";
+		Integer [] tab = {Integer.MIN_VALUE, 0, -1, Integer.MAX_VALUE, Integer.MAX_VALUE + 1};
+		Arrays.stream(tab).forEach(i->System.out.format(FORMAT, i, Integer.toBinaryString(i)));
+		
+		System.out.println(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+		
+		
+		Integer a= Integer.MAX_VALUE - 1000;
+		Integer b= 2000;
+		
+		// ABBA test
+		
+		final String FORMAT2 =  "A=%11d      %32s  ,   B=%11d      %32s%n";
+		// step 0
+		System.out.format(FORMAT2, a, Integer.toBinaryString(a), b, Integer.toBinaryString(b));
+		a=a+b; // b=b; 
+		System.out.format(FORMAT2, a, Integer.toBinaryString(a), b, Integer.toBinaryString(b));
+		/* a=a; */ b=a-b;
+		System.out.format(FORMAT2, a, Integer.toBinaryString(a), b, Integer.toBinaryString(b));
+		a=a-b; // b =b;
+		System.out.format(FORMAT2, a, Integer.toBinaryString(a), b, Integer.toBinaryString(b));
+	}
+```
+
+
