@@ -76,4 +76,39 @@ I wrote a small code in Java to check it:
 #### Concerning creation of an immutable Class in Java
 I have systematized the subject with a very nice blog [page](https://www.journaldev.com/129/how-to-create-immutable-class-in-java). 
 
-
+#### Concerning Java implementation of Singleton
+Again, great description example can be found [here](https://www.javaworld.com/article/2073352/core-java/simply-singleton.html?page=2).
+Of cource there is no need of instancies counter, but as **a instancie indicator** one could just **use** ... **an instance of the class itself**, putting it into private static field.
+Taking into account thread save we have, lazy Singleton:
+```java
+public class LazySingleton {
+	// Lazy
+	private static LazySingleton instance = null;
+	
+	private LazySingleton() {}
+	
+	public static LazySingleton getSingleton() {
+		if(instance==null) {
+			synchronized(LazySingleton.class) {
+				if(instance==null) {
+					instance = new LazySingleton();
+				}
+			}
+		}
+		return instance;
+	}
+}
+```
+or eager :
+```java
+public class EagerSingleton {
+	// Eager
+	private static EagerSingleton instance = new EagerSingleton();
+	
+	private EagerSingleton() {}
+	
+	public static EagerSingleton getSingleton() {
+		return instance;
+	}
+}
+```
