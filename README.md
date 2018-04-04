@@ -112,10 +112,10 @@ public class EagerSingleton {
 	}
 }
 ```
-#### What is in fact a git branch?
-The answer seems simple, but the svn heritage can seriously distort it.
+#### What is in fact a Git branch?
+The answer seems simple, but the SVN heritage can seriously distort it.
 
-In fact in git branch is not a phisical object as in SVN. 
+In fact in Git branch is not a phisical object as in SVN. 
 Creating a brach cost nothing in time and memory (what you pay for are Snapshots of new/changed files.
 
 In Git a branch is simply a lightweight movable pointer to one of these snapshot commits, as you can read [here](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is).
