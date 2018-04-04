@@ -73,4 +73,7 @@ I wrote a small code in Java to check it:
 	}
 ```
 
+#### Concerning creation of an immutable Class in Java
+I have systematized the subject with a very nice blog [page](https://www.journaldev.com/129/how-to-create-immutable-class-in-java). 
+
 
