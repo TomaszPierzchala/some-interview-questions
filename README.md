@@ -13,3 +13,16 @@ Great, thank for very well provided interview.
 Filip asked me, how to swap 2 numbers (e.g ```int```) without using additional auxiliary variable.
 I was thinking about playing with sum, to not lose an information. And that was pretty close, that you said OK.
 After I had come home I have found solution :
+
+Imagine we have two numbers **A** and **B**, and no more memory space for auxiliary variable. 
+In describition below A,B stays for values, while order defines variable 1 or 2.
+
+We start then with :
+```A , B```
+in memory. 
+
+In next step at first position I write sum of two variables, keeping B unchanged.
+
+``` A+B, B```
+
+This is one step operation, and no information is lost. Moreover, I have choosed sum, as it is symetrical : A+B = B+A.
